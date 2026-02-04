@@ -37,7 +37,8 @@ class homescreen extends StatelessWidget {
                 color: Colors.black26,
                 blurRadius: 25,
                 offset: Offset(0, 0),
-              ), ],
+              ),
+            ],
           ),
           child: Column(
 
