@@ -59,18 +59,12 @@ class _HomescreenState extends State<Homescreen> {
   final restaurants = [
     {
       'name': 'Happy Restaurant 1',
-      'type': 'BBQ · Burger · Fast Food',
-      'rate': '4.5',
     },
     {
       'name': 'Happy Restaurant 2',
-      'type': 'BBQ · Burger · Fast Food',
-      'rate': '4.5',
     },
     {
       'name': 'Happy Restaurant 3',
-      'type': 'BBQ · Burger · Fast Food',
-      'rate': '4.5',
     },
   ];
 
@@ -214,7 +208,7 @@ class _HomescreenState extends State<Homescreen> {
                                 end: Alignment.bottomCenter,
                                 colors: [
                                   Colors.transparent,
-                                  Colors.black.withOpacity(0.7),
+                                  Colors.black,
                                 ],
                               ),
                             ),
@@ -277,18 +271,18 @@ class _HomescreenState extends State<Homescreen> {
                   ),
                   title: Text(
                     item['name']!,
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
                   ),
                   subtitle: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(item['type']!),
+                      Text('BBQ · Burger · Fast Food',style: TextStyle(color: Colors.grey,fontSize: 8),),
                       SizedBox(height: 4),
                       Row(
                         children: [
                           Icon(Icons.star, color: Colors.orange, size: 16),
                           SizedBox(width: 4),
-                          Text(item['rate']!),
+                          Text("4.5",style:TextStyle(fontSize: 10, color: Colors.black),),
                         ],
                       )
                     ],
@@ -323,12 +317,15 @@ class _HomescreenState extends State<Homescreen> {
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        Icon(Icons.history,color: Colors.orange,size: 30,),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+
                             Text(
-                              item['name']!,
+                              item['name']as String ,
                               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
                             ),
                             SizedBox(height: 8),
@@ -342,7 +339,7 @@ class _HomescreenState extends State<Homescreen> {
                         Text(
                           "Re-order",
                           style: TextStyle(
-                            color: Colors.deepPurple,
+                            color: Colors.purple,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
