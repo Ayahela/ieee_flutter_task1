@@ -267,10 +267,13 @@ class _HomescreenState extends State<Homescreen> {
                     width: 50,height: 50,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(20)),
-
+                image: DecorationImage(
+                      image: AssetImage("assets/photo-1504674900247-0877df9cc836.jpg"),
+                      fit: BoxFit.cover,
+                ),
 
                     ),
-                    child: Image(image: AssetImage("assets/photo-1504674900247-0877df9cc836.jpg"), fit: BoxFit.cover,),
+
                   ),
                   title: Text(
                     item['name']!,
@@ -304,7 +307,7 @@ class _HomescreenState extends State<Homescreen> {
               ),
             ),
             SizedBox(
-              height: 150,
+              height: 150,width: 600,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 padding: EdgeInsets.symmetric(horizontal: 16),
@@ -313,23 +316,28 @@ class _HomescreenState extends State<Homescreen> {
                 itemBuilder: (context, index) {
                   final item = orders[index];
                   return Container(
-                    width: 200,
+                    width: 300,
                     padding: EdgeInsets.all(16),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16),
                     ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                    child: Row(
                       children: [
-                        Text(
-                          item['name']!,
-                          style: TextStyle(fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          "Delivered yesterday",
-                          style: TextStyle(color: Colors.grey, fontSize: 12),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              item['name']!,
+                              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 10),
+                            ),
+                            SizedBox(height: 8),
+                            Text(
+                              "Delivered yesterday",
+                              style: TextStyle(color: Colors.grey, fontSize: 8),
+                            ),
+
+                          ],
                         ),
                         Text(
                           "Re-order",
@@ -344,6 +352,7 @@ class _HomescreenState extends State<Homescreen> {
                 },
               ),
             ),
+            SizedBox(height: 20,)
 
 
           ],
