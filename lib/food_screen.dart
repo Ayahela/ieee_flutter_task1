@@ -351,7 +351,6 @@ class _HomescreenState extends State<Homescreen> {
             ),
             SizedBox(height: 20,)
 
-
           ],
         ),
       ),
