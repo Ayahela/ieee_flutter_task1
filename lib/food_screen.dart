@@ -331,7 +331,6 @@ class _HomescreenState extends State<Homescreen> {
                           "Delivered yesterday",
                           style: TextStyle(color: Colors.grey, fontSize: 12),
                         ),
-
                         Text(
                           "Re-order",
                           style: TextStyle(
